@@ -223,7 +223,7 @@ body {
 .small-table {
     width: 80%; /* 控制表格宽度 */
     margin: 0 auto; /* 居中表格 */
-    font-size: 12px; /* 调整字体大小，更小一点 */
+    font-size: 13px; /* 调整字体大小，更小一点 */
     border-collapse: collapse; /* 合并边框 */
     border: 1px solid #ddd; /* 添加表格外边框 */
 }
@@ -330,4 +330,50 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+/* 左侧悬浮导航栏样式 */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: #f8f9fa;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    color: #6c757d;
+}
+
+/* 高亮当前查看的标题 */
+.sidebar ul li a.active {
+    color: #6f42c1; /* 紫色 */
+    font-weight: bold;
+}
+
+/* 调整主体内容的位置，避免被左侧导航栏遮挡 */
+.container {
+    margin-left: 270px; /* 左侧导航栏宽度 + 20px 间距 */
+    padding: 20px;
 }
