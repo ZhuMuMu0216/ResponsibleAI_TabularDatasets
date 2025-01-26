@@ -113,16 +113,16 @@ Because I am currently doing research in the field of fairness, and I am very an
 |--------------------|-----------|----------------------|--------------------------------|---------------------|
 | ID                | Integer   |                      |                                | no                  |
 | X1                | Integer   | LIMIT_BAL            |Amount of given credit in NT dollars (includes individual and family/supplementary credit                                | no                  |
-| X2                | Integer   | Sex                  | Gender (1=male, 2=female)                               | no                  |
-| X3                | Integer   | Education Level      | (1=graduate school, 2=university, 3=high school, 4=others, 5=unknown, 6=unknown)                     | no                  |
-| X4                | Integer   | Marital Status       | Marital status (1=married, 2=single, 3=others)                       | no                  |
+| X2                | Binary   | Sex                  | Gender (1=male, 2=female)                               | no                  |
+| X3                | Categorical   | Education Level      | (1=graduate school, 2=university, 3=high school, 4=others, 5=unknown, 6=unknown)                     | no                  |
+| X4                | Categorical   | Marital Status       | Marital status (1=married, 2=single, 3=others)                       | no                  |
 | X5                | Integer   | Age                  | AGE                            | no                  |
-| X6                | Integer   |                      |Repayment status in September, 2005 (-1=pay duly, 1=payment delay for one month, 2=payment delay for two months, … 8=payment delay for eight months, 9=payment delay for nine months and above)                         | no                  |
-| X7                | Integer   |                      |Repayment status in August, 2005 (scale same as above)                         | no                  |
-| X8                | Integer   |                      |Repayment status in July, 2005 (scale same as above)                         | no                  |
-| X9                | Integer   |                      |Repayment status in June, 2005 (scale same as above)                  | no                  |
-| X10               | Integer   |                      |Repayment status in May, 2005 (scale same as above)    | no                  |
-| X11               | Integer   |                      |Repayment status in April, 2005 (scale same as above)                         | no                  |
+| X6                | Categorical   |                      |Repayment status in September, 2005 (-1=pay duly, 1=payment delay for one month, 2=payment delay for two months, … 8=payment delay for eight months, 9=payment delay for nine months and above)                         | no                  |
+| X7                | Categorical   |                      |Repayment status in August, 2005 (scale same as above)                         | no                  |
+| X8                | Categorical   |                      |Repayment status in July, 2005 (scale same as above)                         | no                  |
+| X9                | Categorical   |                      |Repayment status in June, 2005 (scale same as above)                  | no                  |
+| X10               | Categorical   |                      |Repayment status in May, 2005 (scale same as above)    | no                  |
+| X11               | Categorical   |                      |Repayment status in April, 2005 (scale same as above)                         | no                  |
 | X12               | Integer   |                      |Amount of bill statement in September, 2005 (NT dollar)                      | no                  |
 | X13               | Integer   |                      |Amount of bill statement in August, 2005 (NT dollar)                    | no                  |
 | X14               | Integer   |                      |Amount of bill statement in July, 2005 (NT dollar)                  | no                  |
