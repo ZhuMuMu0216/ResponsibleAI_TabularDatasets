@@ -1,6 +1,6 @@
 /* styles.css */
 :root {
-    /* 浅色主题 */
+    /* Light theme */
     --primary-color: #2F3C7E;
     --secondary-color: #3C5186;
     --accent-color: #9B72AA;
@@ -11,7 +11,7 @@
     --border-color: #e2e8f0;
     --shadow-color: rgba(0,0,0,0.1);
 
-    /* 深色主题变量 */
+    /* Dark theme variables */
     --primary-dark: #BB86FC;
     --secondary-dark: #03DAC6;
     --bg-dark: #121212;
@@ -31,7 +31,7 @@
     }
 }
 
-/* 基础样式 */
+/* Base styles */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -57,8 +57,12 @@ body {
     margin: 0 auto;
     padding: 0 2rem;
 }
-
-/* 导航栏 */
+.features {
+    margin-bottom: 2rem; /* 增加底部间距 */
+    padding-bottom: 2rem; /* 如果需要内边距，可以添加 */
+    border-bottom: 1px solid var(--border-color); /* 可选：添加分隔线 */
+}
+/* Navbar */
 .navbar {
     background-color: var(--surface-color);
     box-shadow: 0 4px 6px -1px var(--shadow-color);
@@ -137,7 +141,7 @@ body {
     opacity: 0.9;
 }
 
-/* 按钮样式 */
+/* Button styles */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -165,7 +169,7 @@ body {
     color: var(--surface-color);
 }
 
-/* 文档内容 */
+/* Documentation content */
 .doc-content {
     background: var(--surface-color);
     padding: 3rem;
@@ -199,7 +203,7 @@ body {
     font-size: 0.9rem;
 }
 
-/* 表格样式 */
+/* Table styles */
 .doc-content table {
     width: 100%;
     border-collapse: collapse;
@@ -220,27 +224,28 @@ body {
     color: white;
     font-weight: 600;
 }
+
 .small-table {
-    width: 80%; /* 控制表格宽度 */
-    margin: 0 auto; /* 居中表格 */
-    font-size: 13px; /* 调整字体大小，更小一点 */
-    border-collapse: collapse; /* 合并边框 */
-    border: 1px solid #ddd; /* 添加表格外边框 */
+    width: 80%; /* Control table width */
+    margin: 0 auto; /* Center the table */
+    font-size: 13px; /* Smaller font size */
+    border-collapse: collapse; /* Merge borders */
+    border: 1px solid #ddd; /* Add table border */
 }
 
 .small-table th, .small-table td {
-    padding: 6px; /* 调整单元格内边距 */
-    border: 1px solid #ddd; /* 添加单元格边框 */
-    text-align: left; /* 文本左对齐 */
-    line-height: 1.2; /* 减少行高 */
+    padding: 6px; /* Adjust cell padding */
+    border: 1px solid #ddd; /* Add cell border */
+    text-align: left; /* Left-align text */
+    line-height: 1.2; /* Reduce line height */
 }
 
 .small-table th {
-    background-color: #f2f2f2; /* 表头背景色 */
-    font-weight: bold; /* 表头字体加粗 */
+    background-color: #f2f2f2; /* Header background color */
+    font-weight: bold; /* Bold header text */
 }
 
-/* 响应式设计 */
+/* Responsive design */
 @media (max-width: 768px) {
     .container {
         padding: 0 1rem;
@@ -268,7 +273,7 @@ body {
     }
 }
 
-/* 动画 */
+/* Animations */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -280,7 +285,7 @@ body {
     }
 }
 
-/* 工具提示 */
+/* Tooltip */
 .tooltip {
     position: relative;
     cursor: help;
@@ -302,7 +307,7 @@ body {
     box-shadow: 0 2px 4px var(--shadow-color);
 }
 
-/* 加载动画 */
+/* Loading animation */
 .loader {
     width: 2rem;
     height: 2rem;
@@ -316,7 +321,7 @@ body {
     to { transform: rotate(360deg); }
 }
 
-/* 暗黑模式切换按钮 */
+/* Dark mode toggle button */
 .theme-switch {
     position: fixed;
     bottom: 2rem;
@@ -331,7 +336,8 @@ body {
     align-items: center;
     justify-content: center;
 }
-/* 左侧悬浮导航栏样式 */
+
+/* Left sidebar styles */
 .sidebar {
     position: fixed;
     top: 0;
@@ -366,14 +372,14 @@ body {
     color: #6c757d;
 }
 
-/* 高亮当前查看的标题 */
+/* Highlight the currently viewed section */
 .sidebar ul li a.active {
-    color: #6f42c1; /* 紫色 */
+    color: #6f42c1; /* Purple */
     font-weight: bold;
 }
 
-/* 调整主体内容的位置，避免被左侧导航栏遮挡 */
+/* Adjust main content position to avoid overlapping with the sidebar */
 .container {
-    margin-left: 270px; /* 左侧导航栏宽度 + 20px 间距 */
-    padding: 20px;
+    margin-left: 240px; /* Sidebar width + 20px spacing */
+    padding: 30px;
 }
