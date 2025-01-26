@@ -5,10 +5,10 @@ Because I am currently doing research in the field of fairness, and I am very an
 
 ### Dataset1: German Credit
 
-    1. **Description:** The dataset contains 1000 instances without any missing values and 20 features.
-    2. **URL:** https://archive.ics.uci.edu/dataset/144/statlog+german+credit+data
-    3. **Sensitive features:** Age, Sex
-    4. **Features:**
+1. **Description:** The dataset contains 1000 instances without any missing values and 20 features.
+2. **URL:** https://archive.ics.uci.edu/dataset/144/statlog+german+credit+data
+3. **Sensitive features:** Age, Sex
+4. **Features:**
 
 | Attributes                           | Type         | Values              | # Missing values | Description                                                           |
 |--------------------------------------|--------------|---------------------|-------------------|-----------------------------------------------------------------------|
@@ -33,7 +33,7 @@ Because I am currently doing research in the field of fairness, and I am very an
 | telephone                            | Binary       | Yes, None         | 0                 | Telephone number                                                      |
 | foreign-worker                       | Binary       | Yes, No           | 0                 | Is the individual a foreign worker?                                   |
 | Risk (target)                         | Binary       |  Good, Bad       | 0                 | Class                                                                 |
-    5. **Simplified version:** It may be difficult for someone to understand all these features. There is a [simplified version](https://www.kaggle.com/datasets/uciml/german-credit/data) uploaded in the kaggle and it's a readable CSV file.
+5. **Simplified version:** It may be difficult for someone to understand all these features. There is a [simplified version](https://www.kaggle.com/datasets/uciml/german-credit/data) uploaded in the kaggle and it's a readable CSV file.
 
 | Attributes                           | Type         | Values              | # Missing values | Description                                                           |
 |--------------------------------------|--------------|---------------------|-------------------|-----------------------------------------------------------------------|
@@ -49,10 +49,10 @@ Because I am currently doing research in the field of fairness, and I am very an
 | Risk (target)                         | Binary       |  Good, Bad       | 0                 | Class                                                                 |
 
 ### Dataset2: Adult
-    1. **Description:** Prediction task is to determine whether a person's income is over $50,000 a year based on census data. Also known as "Census Income" dataset. It has 48842 instances and 14 features.
-    2. **URL:** https://archive.ics.uci.edu/dataset/2/adult
-    3. **Sensitive features:** Age, Sex, Race
-    4. **Features:**
+1. **Description:** Prediction task is to determine whether a person's income is over $50,000 a year based on census data. Also known as "Census Income" dataset. It has 48842 instances and 14 features.
+2. **URL:** https://archive.ics.uci.edu/dataset/2/adult
+3. **Sensitive features:** Age, Sex, Race
+4. **Features:**
     
 | **Attributes**      | **Type**       | **Demographic** | **Description**                                                                                                                | **Missing Values** |
 |----------------------|----------------|------------------|-------------------------------------------------------------------------------------------------------------------------------|---------------------|
@@ -73,16 +73,16 @@ Because I am currently doing research in the field of fairness, and I am very an
 | income (target)     | Binary         | Income           | >50K, <=50K.                                                                                                                  | no                  |
 
 ### Dataset3: KDD Census-Income
-    1. **Description:** Prediction task is to determine whether a person's income is over $50,000 a year based on census data. This data set contains weighted census data extracted from the 1994 and 1995 Current Population Surveys conducted by the U.S. Census Bureau.It is **an extended version of the Adult Dataset with a larger scale**, used to study classification model performance and feature engineering methods. It has 299285 instances and 41 features.
-    2. **URL:** https://archive.ics.uci.edu/dataset/117/census+income+kdd
-    3. **Sensitive features:** Age, Sex, Race
-    4. **Features:** see more details after entering the url.
+1. **Description:** Prediction task is to determine whether a person's income is over $50,000 a year based on census data. This data set contains weighted census data extracted from the 1994 and 1995 Current Population Surveys conducted by the U.S. Census Bureau.It is **an extended version of the Adult Dataset with a larger scale**, used to study classification model performance and feature engineering methods. It has 299285 instances and 41 features.
+2. **URL:** https://archive.ics.uci.edu/dataset/117/census+income+kdd
+3. **Sensitive features:** Age, Sex, Race
+4. **Features:** see more details after entering the url.
     
 ### Dataset4: Bank Marketing
-    1. **Description:** The data is related with direct marketing campaigns of a Portuguese banking institution. The marketing campaigns were based on phone calls. Often, more than one contact to the same client was required, in order to access if the product (bank term deposit) would be ('yes') or not ('no') subscribed. It has 45211 instances and 16 features.
-    2. **URL:** https://archive.ics.uci.edu/dataset/222/bank+marketing
-    3. **Sensitive features:** Age, (marital)
-    4. **Features:**
+1. **Description:** The data is related with direct marketing campaigns of a Portuguese banking institution. The marketing campaigns were based on phone calls. Often, more than one contact to the same client was required, in order to access if the product (bank term deposit) would be ('yes') or not ('no') subscribed. It has 45211 instances and 16 features.
+2. **URL:** https://archive.ics.uci.edu/dataset/222/bank+marketing
+3. **Sensitive features:** Age, (marital)
+4. **Features:**
     
 | Attributes     | Type         | Demographic       | Description                                                                                                                                                                           | Missing Values |
 |-----------------|--------------|-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------|
@@ -104,38 +104,38 @@ Because I am currently doing research in the field of fairness, and I am very an
 | poutcome       | Categorical  |                   | Outcome of the previous marketing campaign (categorical: 'failure','nonexistent','success')                                                                                          | yes            |
 | y (target)     | Binary       |                   | Has the client subscribed a term deposit?                                                                                                                                            |                |
 ### Dataset5: Default of Credit Card Clients
-    1. **Description:** This research aimed at the case of customers' default payments in Taiwan and compares the predictive accuracy of probability of default among six data mining methods. It has 30000 instances and 23 features.
-    2. **URL:** https://archive.ics.uci.edu/dataset/350/default+of+credit+card+clients
-    3. **Sensitive features:** Age, Sex, (Marital, Education)
-    4. **Features:**
+1. **Description:** This research aimed at the case of customers' default payments in Taiwan and compares the predictive accuracy of probability of default among six data mining methods. It has 30000 instances and 23 features.
+2. **URL:** https://archive.ics.uci.edu/dataset/350/default+of+credit+card+clients
+3. **Sensitive features:** Age, Sex, (Marital, Education)
+4. **Features:**
 
 | **Attributes** | **Type**  | **Demographic**      | **Description**                | **Missing Values** |
 |--------------------|-----------|----------------------|--------------------------------|---------------------|
 | ID                | Integer   |                      |                                | no                  |
-| X1                | Integer   | LIMIT_BAL            |                                | no                  |
-| X2                | Integer   | Sex                  |                                | no                  |
-| X3                | Integer   | Education Level      | EDUCATION                      | no                  |
-| X4                | Integer   | Marital Status       | MARRIAGE                       | no                  |
+| X1                | Integer   | LIMIT_BAL            |Amount of given credit in NT dollars (includes individual and family/supplementary credit                                | no                  |
+| X2                | Integer   | Sex                  | Gender (1=male, 2=female)                               | no                  |
+| X3                | Integer   | Education Level      | (1=graduate school, 2=university, 3=high school, 4=others, 5=unknown, 6=unknown)                     | no                  |
+| X4                | Integer   | Marital Status       | Marital status (1=married, 2=single, 3=others)                       | no                  |
 | X5                | Integer   | Age                  | AGE                            | no                  |
-| X6                | Integer   |                      | PAY_0                          | no                  |
-| X7                | Integer   |                      | PAY_2                          | no                  |
-| X8                | Integer   |                      | PAY_3                          | no                  |
-| X9                | Integer   |                      | PAY_4                          | no                  |
-| X10               | Integer   |                      | PAY_5                          | no                  |
-| X11               | Integer   |                      | PAY_6                          | no                  |
-| X12               | Integer   |                      | BILL_AMT1                      | no                  |
-| X13               | Integer   |                      | BILL_AMT2                      | no                  |
-| X14               | Integer   |                      | BILL_AMT3                      | no                  |
-| X15               | Integer   |                      | BILL_AMT4                      | no                  |
-| X16               | Integer   |                      | BILL_AMT5                      | no                  |
-| X17               | Integer   |                      | BILL_AMT6                      | no                  |
-| X18               | Integer   |                      | PAY_AMT1                       | no                  |
-| X19               | Integer   |                      | PAY_AMT2                       | no                  |
-| X20               | Integer   |                      | PAY_AMT3                       | no                  |
-| X21               | Integer   |                      | PAY_AMT4                       | no                  |
-| X22               | Integer   |                      | PAY_AMT5                       | no                  |
-| X23               | Integer   |                      | PAY_AMT6                       | no                  |
-| Y (target)        | Binary    |                      | default payment next month     | no                  |
+| X6                | Integer   |                      |Repayment status in September, 2005 (-1=pay duly, 1=payment delay for one month, 2=payment delay for two months, … 8=payment delay for eight months, 9=payment delay for nine months and above)                         | no                  |
+| X7                | Integer   |                      |Repayment status in August, 2005 (scale same as above)                         | no                  |
+| X8                | Integer   |                      |Repayment status in July, 2005 (scale same as above)                         | no                  |
+| X9                | Integer   |                      |Repayment status in June, 2005 (scale same as above)                  | no                  |
+| X10               | Integer   |                      |Repayment status in May, 2005 (scale same as above)    | no                  |
+| X11               | Integer   |                      |Repayment status in April, 2005 (scale same as above)                         | no                  |
+| X12               | Integer   |                      |Amount of bill statement in September, 2005 (NT dollar)                      | no                  |
+| X13               | Integer   |                      |Amount of bill statement in August, 2005 (NT dollar)                    | no                  |
+| X14               | Integer   |                      |Amount of bill statement in July, 2005 (NT dollar)                  | no                  |
+| X15               | Integer   |                      |Amount of bill statement in June, 2005 (NT dollar)                      | no                  |
+| X16               | Integer   |                      |Amount of bill statement in May, 2005 (NT dollar)                     | no                  |
+| X17               | Integer   |                      |Amount of bill statement in April, 2005 (NT dollar)                      | no                  |
+| X18               | Integer   |                      |Amount of previous payment in September, 2005 (NT dollar)                       | no                  |
+| X19               | Integer   |                      |Amount of previous payment in August, 2005 (NT dollar)                       | no                  |
+| X20               | Integer   |                      |Amount of previous payment in July, 2005 (NT dollar)                       | no                  |
+| X21               | Integer   |                      |Amount of previous payment in June, 2005 (NT dollar)                      | no                  |
+| X22               | Integer   |                      |Amount of previous payment in May, 2005 (NT dollar)                     | no                  |
+| X23               | Integer   |                      |Amount of previous payment in April, 2005 (NT dollar)                     | no                  |
+| Y (target)        | Binary    |                      | default payment next month (1=yes, 0=no)    | no                  |
 
 
 ### Reference:

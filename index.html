@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>项目名称 - 文档中心</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">RAI</a>
+            <ul class="nav-links">
+                <li><a href="#home">HOME</a></li>
+                <!-- <li><a href="#docs">文档</a></li>
+                <li><a href="#features">功能</a></li>
+                <li><a href="#installation">安装</a></li>
+                <li><a href="#about">关于</a></li> -->
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 主页Banner -->
+    <section id="home" class="banner">
+        <div class="container">
+            <h1>ResponsibleAI TabularDatasets</h1>
+            <p class="subtitle">This is a collection of Tabular Dataset used in ResponsibleAI (eXplainable AI, fairness domain).
+                Because I am currently doing research in the field of fairness, and I am very anxious with the stage of finding suitable datasets for experiments, so I open this repository to record the current mainstream datasets and their download URLs.</p>
+            <div class="cta-buttons">
+                <!-- <a href="#installation" class="btn">快速开始</a>
+                <a href="#docs" class="btn outline">查看文档</a> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 文档主体 -->
+    <main class="container">
+        <!-- 文档内容区 -->
+        <article id="docs" class="doc-content">
+            <!-- 这里可以插入README.md转换后的内容 -->
+        </article>
+
+        <!-- Datasest1 -->
+        <section id="dataset1" class="features">
+            <h2>Dataset1: German Credit</h2>
+            <div class="feature-grid">
+                <p><strong>Description:</strong> The dataset contains 1000 instances and 20 features, without any missing values.</p>
+                <p><strong>URL:</strong> <a href="https://archive.ics.uci.edu/dataset/144/statlog+german+credit+data" target="_blank">https://archive.ics.uci.edu/dataset/144/statlog+german+credit+data</a></p>
+                <p><strong>Sensitive features:</strong> Age, Sex</p>
+                <p><strong>Features:</strong></p>
+        
+                <table class="small-table">
+                    <thead>
+                        <tr>
+                            <th>Attributes</th>
+                            <th>Type</th>
+                            <th>Values</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>checking-account</td>
+                            <td>Categorical</td>
+                            <td>4</td>
+                            <td>The status of existing checking account</td>
+                        </tr>
+                        <tr>
+                            <td>duration</td>
+                            <td>Numerical</td>
+                            <td>[4 - 72]</td>
+                            <td>The duration of the credit (month)</td>
+                        </tr>
+                        <tr>
+                            <td>credit-history</td>
+                            <td>Categorical</td>
+                            <td>5</td>
+                            <td>The credit history</td>
+                        </tr>
+                        <tr>
+                            <td>purpose</td>
+                            <td>Categorical</td>
+                            <td>10</td>
+                            <td>Purpose (car, furniture, education, etc.)</td>
+                        </tr>
+                        <tr>
+                            <td>credit-amount</td>
+                            <td>Numerical</td>
+                            <td>[250 - 18,424]</td>
+                            <td>Credit amount</td>
+                        </tr>
+                        <tr>
+                            <td>savings-account</td>
+                            <td>Categorical</td>
+                            <td>5</td>
+                            <td>Savings account/bonds</td>
+                        </tr>
+                        <tr>
+                            <td>employment-since</td>
+                            <td>Categorical</td>
+                            <td>5</td>
+                            <td>Present employment since</td>
+                        </tr>
+                        <tr>
+                            <td>installment-rate</td>
+                            <td>Numerical</td>
+                            <td>[1 - 4]</td>
+                            <td>The installment rate in percentage of disposable income</td>
+                        </tr>
+                        <tr>
+                            <td>personal-status-and-sex</td>
+                            <td>Categorical</td>
+                            <td>4</td>
+                            <td>The personal status and sex</td>
+                        </tr>
+                        <tr>
+                            <td>other-debtors</td>
+                            <td>Categorical</td>
+                            <td>3</td>
+                            <td>Other debtors/guarantors</td>
+                        </tr>
+                        <tr>
+                            <td>residence-since</td>
+                            <td>Numerical</td>
+                            <td>[1 - 4]</td>
+                            <td>Present residence since</td>
+                        </tr>
+                        <tr>
+                            <td>property</td>
+                            <td>Categorical</td>
+                            <td>4</td>
+                            <td>Property</td>
+                        </tr>
+                        <tr>
+                            <td>age</td>
+                            <td>Numerical</td>
+                            <td>[19 - 75]</td>
+                            <td>The age of the individual</td>
+                        </tr>
+                        <tr>
+                            <td>other-installment</td>
+                            <td>Categorical</td>
+                            <td>3</td>
+                            <td>Other installment plans</td>
+                        </tr>
+                        <tr>
+                            <td>housing</td>
+                            <td>Categorical</td>
+                            <td>3</td>
+                            <td>Housing (rent, own, for free)</td>
+                        </tr>
+                        <tr>
+                            <td>existing-credits</td>
+                            <td>Numerical</td>
+                            <td>[1 - 4]</td>
+                            <td>Number of existing credits at this bank</td>
+                        </tr>
+                        <tr>
+                            <td>job</td>
+                            <td>Categorical</td>
+                            <td>4</td>
+                            <td>Job (unemployed, (un)skilled, management)</td>
+                        </tr>
+                        <tr>
+                            <td>number-people-provide-maintenance-for</td>
+                            <td>Numerical</td>
+                            <td>[1 - 2]</td>
+                            <td>Number of people being liable to provide maintenance for</td>
+                        </tr>
+                        <tr>
+                            <td>telephone</td>
+                            <td>Binary</td>
+                            <td>Yes, None</td>
+                            <td>Telephone number</td>
+                        </tr>
+                        <tr>
+                            <td>foreign-worker</td>
+                            <td>Binary</td>
+                            <td>Yes, No</td>
+                            <td>Is the individual a foreign worker?</td>
+                        </tr>
+                        <tr>
+                            <td>Risk (target)</td>
+                            <td>Binary</td>
+                            <td>Good, Bad</td>
+                            <td>Class</td>
+                        </tr>
+                    </tbody>
+                </table>
+        
+                <p><strong>Simplified version:</strong> It may be difficult for someone to understand all these features. There is a <a href="https://www.kaggle.com/datasets/uciml/german-credit/data" target="_blank">simplified version</a> uploaded on Kaggle, and it's a readable CSV file.</p>
+        
+                <table class="small-table">
+                    <thead>
+                        <tr>
+                            <th>Attributes</th>
+                            <th>Type</th>
+                            <th>Values</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>checking-account</td>
+                            <td>Categorical</td>
+                            <td>4</td>
+                            <td>The status of existing checking account</td>
+                        </tr>
+                        <tr>
+                            <td>duration</td>
+                            <td>Numerical</td>
+                            <td>[4 - 72]</td>
+                            <td>The duration of the credit (month)</td>
+                        </tr>
+                        <tr>
+                            <td>purpose</td>
+                            <td>Categorical</td>
+                            <td>10</td>
+                            <td>Purpose (car, furniture, education, etc.)</td>
+                        </tr>
+                        <tr>
+                            <td>credit-amount</td>
+                            <td>Numerical</td>
+                            <td>[250 - 18,424]</td>
+                            <td>Credit amount</td>
+                        </tr>
+                        <tr>
+                            <td>savings-account</td>
+                            <td>Categorical</td>
+                            <td>5</td>
+                            <td>Savings account/bonds</td>
+                        </tr>
+                        <tr>
+                            <td>Sex</td>
+                            <td>Categorical</td>
+                            <td>4</td>
+                            <td>The personal status and sex</td>
+                        </tr>
+                        <tr>
+                            <td>age</td>
+                            <td>Numerical</td>
+                            <td>[19 - 75]</td>
+                            <td>The age of the individual</td>
+                        </tr>
+                        <tr>
+                            <td>housing</td>
+                            <td>Categorical</td>
+                            <td>3</td>
+                            <td>Housing (rent, own, for free)</td>
+                        </tr>
+                        <tr>
+                            <td>job</td>
+                            <td>Categorical</td>
+                            <td>4</td>
+                            <td>Job (unemployed, (un)skilled, management)</td>
+                        </tr>
+                        <tr>
+                            <td>Risk (target)</td>
+                            <td>Binary</td>
+                            <td>Good, Bad</td>
+                            <td>Class</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+        <!-- Dataset2 -->
+        <section id="dataset2" class="features">
+            <h2>Dataset2: Adult</h2>
+            <div class="feature-grid">
+                <p><strong>Description:</strong> Prediction task is to determine whether a person's income is over $50,000 a year based on census data. Also known as "Census Income" dataset. It has 48842 instances and 14 features.</p>
+                <p><strong>URL:</strong> <a href="https://archive.ics.uci.edu/dataset/2/adult" target="_blank">https://archive.ics.uci.edu/dataset/2/adult</a></p>
+                <p><strong>Sensitive features:</strong> Age, Sex, Race</p>
+                <p><strong>Features:</strong></p>
+
+                <table class="small-table">
+                    <thead>
+                        <tr>
+                            <th>Attributes</th>
+                            <th>Type</th>
+                            <th>Demographic</th>
+                            <th>Description</th>
+                            <th>Missing Values</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>age</td>
+                            <td>Integer</td>
+                            <td>Age</td>
+                            <td>N/A</td>
+                            <td>no</td>
+                        </tr>
+                        <tr>
+                            <td>workclass</td>
+                            <td>Categorical</td>
+                            <td>Income</td>
+                            <td>Private, Self-emp-not-inc, Self-emp-inc, Federal-gov, Local-gov, State-gov, Without-pay, Never-worked.</td>
+                            <td>yes</td>
+                        </tr>
+                        <tr>
+                            <td>fnlwgt</td>
+                            <td>Integer</td>
+                            <td>N/A</td>
+                            <td>N/A</td>
+                            <td>no</td>
+                        </tr>
+                        <tr>
+                            <td>education</td>
+                            <td>Categorical</td>
+                            <td>Education Level</td>
+                            <td>Bachelors, Some-college, 11th, HS-grad, Prof-school, Assoc-acdm, Assoc-voc, 9th, 7th-8th, 12th, Masters, 1st-4th, 10th, Doctorate, 5th-6th, Preschool.</td>
+                            <td>no</td>
+                        </tr>
+                        <tr>
+                            <td>education-num</td>
+                            <td>Integer</td>
+                            <td>Education Level</td>
+                            <td>N/A</td>
+                            <td>no</td>
+                        </tr>
+                        <tr>
+                            <td>marital-status</td>
+                            <td>Categorical</td>
+                            <td>Other</td>
+                            <td>Married-civ-spouse, Divorced, Never-married, Separated, Widowed, Married-spouse-absent, Married-AF-spouse.</td>
+                            <td>no</td>
+                        </tr>
+                        <tr>
+                            <td>occupation</td>
+                            <td>Categorical</td>
+                            <td>Other</td>
+                            <td>Tech-support, Craft-repair, Other-service, Sales, Exec-managerial, Prof-specialty, Handlers-cleaners, Machine-op-inspct, Adm-clerical, Farming-fishing, Transport-moving, Priv-house-serv, Protective-serv, Armed-Forces.</td>
+                            <td>yes</td>
+                        </tr>
+                        <tr>
+                            <td>relationship</td>
+                            <td>Categorical</td>
+                            <td>Other</td>
+                            <td>Wife, Own-child, Husband, Not-in-family, Other-relative, Unmarried.</td>
+                            <td>no</td>
+                        </tr>
+                        <tr>
+                            <td>race</td>
+                            <td>Categorical</td>
+                            <td>Race</td>
+                            <td>White, Asian-Pac-Islander, Amer-Indian-Eskimo, Other, Black.</td>
+                            <td>no</td>
+                        </tr>
+                        <tr>
+                            <td>sex</td>
+                            <td>Binary</td>
+                            <td>Sex</td>
+                            <td>Female, Male.</td>
+                            <td>no</td>
+                        </tr>
+                        <tr>
+                            <td>capital-gain</td>
+                            <td>Integer</td>
+                            <td>N/A</td>
+                            <td>N/A</td>
+                            <td>no</td>
+                        </tr>
+                        <tr>
+                            <td>capital-loss</td>
+                            <td>Integer</td>
+                            <td>N/A</td>
+                            <td>N/A</td>
+                            <td>no</td>
+                        </tr>
+                        <tr>
+                            <td>hours-per-week</td>
+                            <td>Integer</td>
+                            <td>N/A</td>
+                            <td>N/A</td>
+                            <td>no</td>
+                        </tr>
+                        <tr>
+                            <td>native-country</td>
+                            <td>Categorical</td>
+                            <td>Other</td>
+                            <td>United-States, Cambodia, England, Puerto-Rico, Canada, Germany, Outlying-US(Guam-USVI-etc), India, Japan, Greece, South, China, Cuba, Iran, Honduras, Philippines, Italy, Poland, Jamaica, Vietnam, Mexico, Portugal, Ireland, France, Dominican-Republic, Laos, Ecuador, Taiwan, Haiti, Columbia, Hungary, Guatemala, Nicaragua, Scotland, Thailand, Yugoslavia, El-Salvador, Trinadad&Tobago, Peru, Hong, Holand-Netherlands.</td>
+                            <td>yes</td>
+                        </tr>
+                        <tr>
+                            <td>income (target)</td>
+                            <td>Binary</td>
+                            <td>Income</td>
+                            <td>&gt;50K, &lt;=50K.</td>
+                            <td>no</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p><strong>Simplified version:</strong> The dataset is widely used in machine learning for classification tasks. A cleaned and preprocessed version can be found on <a href="https://www.kaggle.com/datasets/uciml/adult-census-income" target="_blank">Kaggle</a>.</p>
+            </div>
+        </section>
+
+        <!-- Dataset3 -->
+        <section id="dataset3" class="features">
+            <h2>Dataset3: KDD Census-Income</h2>
+            <div class="feature-grid">
+                <p><strong>Description:</strong> Prediction task is to determine whether a person's income is over $50,000 a year based on census data. This data set contains weighted census data extracted from the 1994 and 1995 Current Population Surveys conducted by the U.S. Census Bureau. It is <strong>an extended version of the Adult Dataset with a larger scale</strong>, used to study classification model performance and feature engineering methods. It has 299285 instances and 41 features.</p>
+                <p><strong>URL:</strong> <a href="https://archive.ics.uci.edu/dataset/117/census+income+kdd" target="_blank">https://archive.ics.uci.edu/dataset/117/census+income+kdd</a></p>
+                <p><strong>Sensitive features:</strong> Age, Sex, Race</p>
+                <p><strong>Features:</strong> See more details after entering the URL.</p>
+            </div>
+        </section>
+
+        <!-- Dataset4 -->
+        <section id="dataset4" class="features">
+            <h2>Dataset4: Bank Marketing</h2>
+            <div class="feature-grid">
+                <p><strong>Description:</strong> The data is related with direct marketing campaigns of a Portuguese banking institution. The marketing campaigns were based on phone calls. Often, more than one contact to the same client was required, in order to access if the product (bank term deposit) would be ('yes') or not ('no') subscribed. It has 45211 instances and 16 features.</p>
+                <p><strong>URL:</strong> <a href="https://archive.ics.uci.edu/dataset/222/bank+marketing" target="_blank">https://archive.ics.uci.edu/dataset/222/bank+marketing</a></p>
+                <p><strong>Sensitive features:</strong> Age, (marital)</p>
+                <p><strong>Features:</strong></p>
+
+                <table class="small-table">
+                    <thead>
+                        <tr>
+                            <th>Attributes</th>
+                            <th>Type</th>
+                            <th>Demographic</th>
+                            <th>Description</th>
+                            <th>Missing Values</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>age</td>
+                            <td>Integer</td>
+                            <td>Age</td>
+                            <td>Age</td>
+                            <td>no</td>
+                        </tr>
+                        <tr>
+                            <td>job</td>
+                            <td>Categorical</td>
+                            <td>Occupation</td>
+                            <td>Type of job (categorical: 'admin.','blue-collar','entrepreneur','housemaid','management','retired','self-employed','services','student','technician','unemployed','unknown')</td>
+                            <td>no</td>
+                        </tr>
+                        <tr>
+                            <td>marital</td>
+                            <td>Categorical</td>
+                            <td>Marital Status</td>
+                            <td>Marital status (categorical: 'divorced','married','single','unknown'; note: 'divorced' means divorced or widowed)</td>
+                            <td>no</td>
+                        </tr>
+                        <tr>
+                            <td>education</td>
+                            <td>Categorical</td>
+                            <td>Education Level</td>
+                            <td>(categorical: 'basic.4y','basic.6y','basic.9y','high.school','illiterate','professional.course','university.degree','unknown')</td>
+                            <td>no</td>
+                        </tr>
+                        <tr>
+                            <td>default</td>
+                            <td>Binary</td>
+                            <td>N/A</td>
+                            <td>Has credit in default?</td>
+                            <td>no</td>
+                        </tr>
+                        <tr>
+                            <td>balance</td>
+                            <td>Integer</td>
+                            <td>N/A</td>
+                            <td>Average yearly balance</td>
+                            <td>no</td>
+                        </tr>
+                        <tr>
+                            <td>housing</td>
+                            <td>Binary</td>
+                            <td>N/A</td>
+                            <td>Has housing loan?</td>
+                            <td>no</td>
+                        </tr>
+                        <tr>
+                            <td>loan</td>
+                            <td>Binary</td>
+                            <td>N/A</td>
+                            <td>Has personal loan?</td>
+                            <td>no</td>
+                        </tr>
+                        <tr>
+                            <td>contact</td>
+                            <td>Categorical</td>
+                            <td>N/A</td>
+                            <td>Contact communication type (categorical: 'cellular','telephone')</td>
+                            <td>yes</td>
+                        </tr>
+                        <tr>
+                            <td>day_of_week</td>
+                            <td>Date</td>
+                            <td>N/A</td>
+                            <td>Last contact day of the week</td>
+                            <td>no</td>
+                        </tr>
+                        <tr>
+                            <td>month</td>
+                            <td>Date</td>
+                            <td>N/A</td>
+                            <td>Last contact month of year (categorical: 'jan', 'feb', 'mar', ..., 'nov', 'dec')</td>
+                            <td>no</td>
+                        </tr>
+                        <tr>
+                            <td>duration</td>
+                            <td>Integer</td>
+                            <td>N/A</td>
+                            <td>Last contact duration, in seconds (numeric). Important note: this attribute highly affects the output target (e.g., if duration=0 then y='no'). Yet, the duration is not known before</td>
+                            <td>no</td>
+                        </tr>
+                        <tr>
+                            <td>campaign</td>
+                            <td>Integer</td>
+                            <td>N/A</td>
+                            <td>Number of contacts performed during this campaign and for this client (numeric, includes last contact)</td>
+                            <td>no</td>
+                        </tr>
+                        <tr>
+                            <td>pdays</td>
+                            <td>Integer</td>
+                            <td>N/A</td>
+                            <td>Number of days that passed by after the client was last contacted from a previous campaign (numeric; -1 means client was not previously contacted)</td>
+                            <td>yes</td>
+                        </tr>
+                        <tr>
+                            <td>previous</td>
+                            <td>Integer</td>
+                            <td>N/A</td>
+                            <td>Number of contacts performed before this campaign and for this client</td>
+                            <td>no</td>
+                        </tr>
+                        <tr>
+                            <td>poutcome</td>
+                            <td>Categorical</td>
+                            <td>N/A</td>
+                            <td>Outcome of the previous marketing campaign (categorical: 'failure','nonexistent','success')</td>
+                            <td>yes</td>
+                        </tr>
+                        <tr>
+                            <td>y (target)</td>
+                            <td>Binary</td>
+                            <td>N/A</td>
+                            <td>Has the client subscribed a term deposit?</td>
+                            <td>no</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Dataset5 -->
+        <section id="dataset5" class="features">
+            <h2>Dataset5: Default of Credit Card Clients</h2>
+            <div class="feature-grid">
+                <p><strong>Description:</strong> This research aimed at the case of customers' default payments in Taiwan and compares the predictive accuracy of probability of default among six data mining methods. It has 30000 instances and 23 features, without missing values.</p>
+                <p><strong>URL:</strong> <a href="https://archive.ics.uci.edu/dataset/350/default+of+credit+card+clients" target="_blank">https://archive.ics.uci.edu/dataset/350/default+of+credit+card+clients</a></p>
+                <p><strong>Sensitive features:</strong> Age, Sex, (Marital, Education)</p>
+                <p><strong>Features:</strong></p>
+
+                <table class="small-table">
+                    <thead>
+                        <tr>
+                            <th>Attributes</th>
+                            <th>Type</th>
+                            <th>Demographic</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ID</td>
+                            <td>Integer</td>
+                            <td>N/A</td>
+                            <td>N/A</td>
+                        </tr>
+                        <tr>
+                            <td>X1</td>
+                            <td>Integer</td>
+                            <td>LIMIT_BAL</td>
+                            <td>Amount of given credit in NT dollars (includes individual and family/supplementary credit)</td>
+                        </tr>
+                        <tr>
+                            <td>X2</td>
+                            <td>Integer</td>
+                            <td>Sex</td>
+                            <td>Gender (1=male, 2=female)</td>
+                        </tr>
+                        <tr>
+                            <td>X3</td>
+                            <td>Integer</td>
+                            <td>Education Level</td>
+                            <td>(1=graduate school, 2=university, 3=high school, 4=others, 5=unknown, 6=unknown)</td>
+                        </tr>
+                        <tr>
+                            <td>X4</td>
+                            <td>Integer</td>
+                            <td>Marital Status</td>
+                            <td>Marital status (1=married, 2=single, 3=others)</td>
+                        </tr>
+                        <tr>
+                            <td>X5</td>
+                            <td>Integer</td>
+                            <td>Age</td>
+                            <td>AGE</td>
+                        </tr>
+                        <tr>
+                            <td>X6</td>
+                            <td>Integer</td>
+                            <td>N/A</td>
+                            <td>Repayment status in September, 2005 (-1=pay duly, 1=payment delay for one month, 2=payment delay for two months, … 8=payment delay for eight months, 9=payment delay for nine months and above)</td>
+                        </tr>
+                        <tr>
+                            <td>X7</td>
+                            <td>Integer</td>
+                            <td>N/A</td>
+                            <td>Repayment status in August, 2005 (scale same as above)</td>
+                        </tr>
+                        <tr>
+                            <td>X8</td>
+                            <td>Integer</td>
+                            <td>N/A</td>
+                            <td>Repayment status in July, 2005 (scale same as above)</td>
+                        </tr>
+                        <tr>
+                            <td>X9</td>
+                            <td>Integer</td>
+                            <td>N/A</td>
+                            <td>Repayment status in June, 2005 (scale same as above)</td>
+                        </tr>
+                        <tr>
+                            <td>X10</td>
+                            <td>Integer</td>
+                            <td>N/A</td>
+                            <td>Repayment status in May, 2005 (scale same as above)</td>
+                        </tr>
+                        <tr>
+                            <td>X11</td>
+                            <td>Integer</td>
+                            <td>N/A</td>
+                            <td>Repayment status in April, 2005 (scale same as above)</td>
+                        </tr>
+                        <tr>
+                            <td>X12</td>
+                            <td>Integer</td>
+                            <td>N/A</td>
+                            <td>Amount of bill statement in September, 2005 (NT dollar)</td>
+                        </tr>
+                        <tr>
+                            <td>X13</td>
+                            <td>Integer</td>
+                            <td>N/A</td>
+                            <td>Amount of bill statement in August, 2005 (NT dollar)</td>
+                        </tr>
+                        <tr>
+                            <td>X14</td>
+                            <td>Integer</td>
+                            <td>N/A</td>
+                            <td>Amount of bill statement in July, 2005 (NT dollar)</td>
+                        </tr>
+                        <tr>
+                            <td>X15</td>
+                            <td>Integer</td>
+                            <td>N/A</td>
+                            <td>Amount of bill statement in June, 2005 (NT dollar)</td>
+                        </tr>
+                        <tr>
+                            <td>X16</td>
+                            <td>Integer</td>
+                            <td>N/A</td>
+                            <td>Amount of bill statement in May, 2005 (NT dollar)</td>
+                        </tr>
+                        <tr>
+                            <td>X17</td>
+                            <td>Integer</td>
+                            <td>N/A</td>
+                            <td>Amount of bill statement in April, 2005 (NT dollar)</td>
+                        </tr>
+                        <tr>
+                            <td>X18</td>
+                            <td>Integer</td>
+                            <td>N/A</td>
+                            <td>Amount of previous payment in September, 2005 (NT dollar)</td>
+                        </tr>
+                        <tr>
+                            <td>X19</td>
+                            <td>Integer</td>
+                            <td>N/A</td>
+                            <td>Amount of previous payment in August, 2005 (NT dollar)</td>
+                        </tr>
+                        <tr>
+                            <td>X20</td>
+                            <td>Integer</td>
+                            <td>N/A</td>
+                            <td>Amount of previous payment in July, 2005 (NT dollar)</td>
+                        </tr>
+                        <tr>
+                            <td>X21</td>
+                            <td>Integer</td>
+                            <td>N/A</td>
+                            <td>Amount of previous payment in June, 2005 (NT dollar)</td>
+                        </tr>
+                        <tr>
+                            <td>X22</td>
+                            <td>Integer</td>
+                            <td>N/A</td>
+                            <td>Amount of previous payment in May, 2005 (NT dollar)</td>
+                        </tr>
+                        <tr>
+                            <td>X23</td>
+                            <td>Integer</td>
+                            <td>N/A</td>
+                            <td>Amount of previous payment in April, 2005 (NT dollar)</td>
+                        </tr>
+                        <tr>
+                            <td>Y (target)</td>
+                            <td>Binary</td>
+                            <td>N/A</td>
+                            <td>Default payment next month (1=yes, 0=no)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+
+        <!-- 安装指南 -->
+        <!-- <section id="installation" class="installation">
+            <h2>安装指南</h2>
+            <div class="code-block">
+                <pre><code>$ npm install your-package</code></pre>
+            </div>
+        </section> -->
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="https://github.com/ZhuMuMu0216/ResponsibleAI_TabularDatasets">GitHub repository</a></li>
+                        <!-- <li><a href="#">问题反馈</a></li>
+                        <li><a href="#">贡献指南</a></li> -->
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><p>s232291@dtu.dk</p></li>
+                        <li><p>zhulin252@outlook.com (personal)</p></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2025 ResponsibleAI TabularDatasets - MIT License</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
