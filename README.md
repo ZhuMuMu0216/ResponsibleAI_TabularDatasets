@@ -61,7 +61,16 @@ Because I am currently doing research in the field of fairness, and I am very an
 3. **Sensitive features:** Age, Sex, (Marital, Education)
 4. **Features:** see more details after entering the url.
 
-
+### Dataset6: COMPAS 
+1. **Description:** COMPAS (Correctional Offender Management Profiling for Alternative Sanctions) is a popular commercial algorithm used by judges and parole officers for scoring criminal defendant’s likelihood of reoffending (recidivism). It has been shown that the algorithm is biased in favor of white defendants, and against black inmates, based on a 2 year follow up study (i.e who actually committed crimes or violent crimes after 2 years).
+2. **URL:** https://github.com/propublica/compas-analysis/
+3. **Sensitive features:** Age, Sex, **Race (many researches here)**
+4. **Features:** see more details after entering the url.
+5. **Simplified Versions:** 
+    - [compas-scores-two-years.csv](https://github.com/propublica/compas-analysis/blob/master/compas-scores-two-years.csv) (common version, 7215 instances, subset of compas-scores.csv),
+    - [compas-scores-two-years-violent.csv](https://github.com/propublica/compas-analysis/blob/master/compas-scores-two-years-violent.csv) (4743 instances, subset of compas-scores.csv), 
+    - [compas-scores-raw.csv](https://github.com/propublica/compas-analysis/blob/master/compas-scores-raw.csv) (it needs more preprocessing), 
+    - [compas-scores.csv](https://github.com/propublica/compas-analysis/blob/master/compas-scores.csv) (11757 instances)
 ### Reference:
 1. [Le Quy, Tai, et al. "A survey on datasets for fairness‐aware machine learning." Wiley Interdisciplinary Reviews: Data Mining and Knowledge Discovery 12.3 (2022): e1452](https://wires.onlinelibrary.wiley.com/doi/full/10.1002/widm.1452).
 2. [Markelle Kelly, Rachel Longjohn, Kolby Nottingham,

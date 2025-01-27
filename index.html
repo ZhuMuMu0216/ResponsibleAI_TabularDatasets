@@ -740,6 +740,193 @@
             </div>
         </section>
 
+        <!-- Dataset6 -->
+        <section id="dataset6" class="features">
+            <h2>Dataset6: COMPAS</h2>
+            <div class="feature-grid">
+                <p><strong>Description:</strong> COMPAS (Correctional Offender Management Profiling for Alternative Sanctions) is a popular commercial algorithm used by judges and parole officers for scoring criminal defendants’ likelihood of reoffending (recidivism). It has been shown that the algorithm is biased in favor of white defendants, and against black inmates, based on a 2-year follow-up study (i.e., who actually committed crimes or violent crimes after 2 years).</p>
+                <p><strong>URL:</strong> <a href="https://github.com/propublica/compas-analysis/" target="_blank">https://github.com/propublica/compas-analysis/</a></p>
+                <p><strong>Sensitive features:</strong> Age, Sex, Race (many reseraches about Race)</p>
+                <p><strong>Simplified Versions:</strong></p>
+                <ul style="margin-left: 30px;">
+                    <li><a href="https://github.com/propublica/compas-analysis/blob/master/compas-scores-two-years.csv" target="_blank">compas-scores-two-years.csv</a> (common version, 7215 instances, subset of compas-scores.csv)</li>
+                    <li><a href="https://github.com/propublica/compas-analysis/blob/master/compas-scores-two-years-violent.csv" target="_blank">compas-scores-two-years-violent.csv</a> (4743 instances, subset of compas-scores.csv)</li>
+                    <li><a href="https://github.com/propublica/compas-analysis/blob/master/compas-scores-raw.csv" target="_blank">compas-scores-raw.csv</a> (requires additional preprocessing)</li>
+                    <li><a href="https://github.com/propublica/compas-analysis/blob/master/compas-scores.csv" target="_blank">compas-scores.csv</a> (11757 instances)</li>
+                </ul>
+                <p><strong>Features:</strong> It has 24 features and 2 targets (is_recid/ two_year_recid), but features like id, name, first, last, compas_screening_date, dob, days_b_screening_arrest, c_jail_in, c_jail_out, c_case_number, c_offense_date, c_arrest_date, c_days_from_compas can be deleted while training the model.</p>
+                <table class="small-table">
+                    <thead>
+                        <tr>
+                            <th>Attributes</th>
+                            <th>Type</th>
+                            <th>Demographic</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>id</td>
+                            <td>Integer</td>
+                            <td>N/A</td>
+                            <td>Unique identifier for each record</td>
+                        </tr>
+                        <tr>
+                            <td>name</td>
+                            <td>String</td>
+                            <td>N/A</td>
+                            <td>Name of the individual</td>
+                        </tr>
+                        <tr>
+                            <td>first</td>
+                            <td>String</td>
+                            <td>N/A</td>
+                            <td>First name of the individual</td>
+                        </tr>
+                        <tr>
+                            <td>last</td>
+                            <td>String</td>
+                            <td>N/A</td>
+                            <td>Last name of the individual</td>
+                        </tr>
+                        <tr>
+                            <td>compas_screening_date</td>
+                            <td>Date</td>
+                            <td>N/A</td>
+                            <td>Date of the COMPAS screening</td>
+                        </tr>
+                        <tr>
+                            <td>sex</td>
+                            <td>Binary</td>
+                            <td>Sex</td>
+                            <td>Gender (Male/Female)</td>
+                        </tr>
+                        <tr>
+                            <td>dob</td>
+                            <td>Date</td>
+                            <td>N/A</td>
+                            <td>Date of birth</td>
+                        </tr>
+                        <tr>
+                            <td>age</td>
+                            <td>Integer</td>
+                            <td>Age</td>
+                            <td>Age of the individual</td>
+                        </tr>
+                        <tr>
+                            <td>age_cat</td>
+                            <td>Categorical</td>
+                            <td>Age</td>
+                            <td>Age category (e.g., 18-25, 26-45, 46+)</td>
+                        </tr>
+                        <tr>
+                            <td>race</td>
+                            <td>Categorical</td>
+                            <td>Race</td>
+                            <td>Race of the individual</td>
+                        </tr>
+                        <tr>
+                            <td>juv_fel_count</td>
+                            <td>Integer</td>
+                            <td>N/A</td>
+                            <td>Number of juvenile felony offenses</td>
+                        </tr>
+                        <tr>
+                            <td>decile_score</td>
+                            <td>Integer</td>
+                            <td>N/A</td>
+                            <td>COMPAS risk score (1-10)</td>
+                        </tr>
+                        <tr>
+                            <td>juv_misd_count</td>
+                            <td>Integer</td>
+                            <td>N/A</td>
+                            <td>Number of juvenile misdemeanor offenses</td>
+                        </tr>
+                        <tr>
+                            <td>juv_other_count</td>
+                            <td>Integer</td>
+                            <td>N/A</td>
+                            <td>Number of other juvenile offenses</td>
+                        </tr>
+                        <tr>
+                            <td>priors_count</td>
+                            <td>Integer</td>
+                            <td>N/A</td>
+                            <td>Total number of prior offenses</td>
+                        </tr>
+                        <tr>
+                            <td>days_b_screening_arrest</td>
+                            <td>Integer</td>
+                            <td>N/A</td>
+                            <td>Days between arrest and COMPAS screening</td>
+                        </tr>
+                        <tr>
+                            <td>c_jail_in</td>
+                            <td>Date</td>
+                            <td>N/A</td>
+                            <td>Jail entry date for the current charge</td>
+                        </tr>
+                        <tr>
+                            <td>c_jail_out</td>
+                            <td>Date</td>
+                            <td>N/A</td>
+                            <td>Jail exit date for the current charge</td>
+                        </tr>
+                        <tr>
+                            <td>c_case_number</td>
+                            <td>String</td>
+                            <td>N/A</td>
+                            <td>Case number of the current charge</td>
+                        </tr>
+                        <tr>
+                            <td>c_offense_date</td>
+                            <td>Date</td>
+                            <td>N/A</td>
+                            <td>Date of the current offense</td>
+                        </tr>
+                        <tr>
+                            <td>c_arrest_date</td>
+                            <td>Date</td>
+                            <td>N/A</td>
+                            <td>Date of the current arrest</td>
+                        </tr>
+                        <tr>
+                            <td>c_days_from_compas</td>
+                            <td>Integer</td>
+                            <td>N/A</td>
+                            <td>Days from COMPAS screening to the current charge</td>
+                        </tr>
+                        <tr>
+                            <td>c_charge_degree</td>
+                            <td>Categorical</td>
+                            <td>N/A</td>
+                            <td>Severity of the current charge (e.g., M=misdemeanor, F=felony)</td>
+                        </tr>
+                        <tr>
+                            <td>c_charge_desc</td>
+                            <td>String</td>
+                            <td>N/A</td>
+                            <td>Description of the current charge</td>
+                        </tr>
+                        <tr>
+                            <td>is_recid (target)</td>
+                            <td>Binary</td>
+                            <td>N/A</td>
+                            <td>Whether the individual recidivated (1=yes, 0=no)</td>
+                        </tr>
+                        <tr>
+                            <td>two_year_recid (target)</td>
+                            <td>Binary</td>
+                            <td>N/A</td>
+                            <td>Whether the individual recidivated within 2 years (1=yes, 0=no)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </section>
+
 
         <!-- 安装指南 -->
         <!-- <section id="installation" class="installation">
@@ -751,9 +938,17 @@
     </main>
 
     <!-- 页脚 -->
+    <!-- 页脚 -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
+                <div class="footer-section">
+                    <h4>References</h4>
+                    <ul>
+                        <li><a href="https://wires.onlinelibrary.wiley.com/doi/full/10.1002/widm.1452" target="_blank">[1] Le Quy, Tai, et al. "A survey on datasets for fairness‐aware machine learning." Wiley Interdisciplinary Reviews: Data Mining and Knowledge Discovery 12.3 (2022): e1452</a></li>
+                        <li><a href="https://archive.ics.uci.edu" target="_blank">[2] Markelle Kelly, Rachel Longjohn, Kolby Nottingham, The UCI Machine Learning Repository</a></li>
+                    </ul>
+                </div>
                 <div class="footer-section">
                     <h4>Links</h4>
                     <ul>
@@ -775,6 +970,7 @@
             </div>
         </div>
     </footer>
+
 
     <script src="script.js"></script>
 </body>
