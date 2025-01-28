@@ -756,8 +756,9 @@
                     <li><a href="https://github.com/propublica/compas-analysis/blob/master/compas-scores.csv" target="_blank">compas-scores.csv</a> (11757 instances)</li>
                 </ul>
                 <p><strong>Features:</strong> It has 3 targets (is_recid/ two_year_recid/ is_violent_reci), and you can decide to use which depending on your tasks or files. Besides, features like id, name, first, last, compas_screening_date, dob, days_b_screening_arrest,
-                     c_jail_in, c_jail_out, c_case_number, c_offense_date, c_arrest_date, c_days_from_compas and so on<b>can be deleted</b> while training the model.</p>
-                <!-- <table class="small-table">
+                     c_jail_in, c_jail_out, c_case_number, c_offense_date, c_arrest_date, c_days_from_compas and so on <b>can be deleted</b> while training the model.</p>
+                     For example, We use the following features to predict `two_year_recid`: **sex, age, race, juv_fel_count, juv_misd_count, juv_other_count, priors_count, c_charge_degree, type_of_assessment, and score_text**. These features include demographic information, juvenile and prior criminal records, the severity of the current charge, and assessment type, which help determine the likelihood of recidivism within two years.
+                     <!-- <table class="small-table">
                     <thead>
                         <tr>
                             <th>Attributes</th>
