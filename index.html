@@ -755,8 +755,9 @@
                     <li><a href="https://github.com/propublica/compas-analysis/blob/master/compas-scores-raw.csv" target="_blank">compas-scores-raw.csv</a> (requires additional preprocessing)</li>
                     <li><a href="https://github.com/propublica/compas-analysis/blob/master/compas-scores.csv" target="_blank">compas-scores.csv</a> (11757 instances)</li>
                 </ul>
-                <p><strong>Features:</strong> It has 24 features and 2 targets (is_recid/ two_year_recid), but features like id, name, first, last, compas_screening_date, dob, days_b_screening_arrest, c_jail_in, c_jail_out, c_case_number, c_offense_date, c_arrest_date, c_days_from_compas <b>can be deleted</b> while training the model.</p>
-                <table class="small-table">
+                <p><strong>Features:</strong> It has 3 targets (is_recid/ two_year_recid/ is_violent_reci), and you can decide to use which depending on your tasks or files. Besides, features like id, name, first, last, compas_screening_date, dob, days_b_screening_arrest,
+                     c_jail_in, c_jail_out, c_case_number, c_offense_date, c_arrest_date, c_days_from_compas and so on<b>can be deleted</b> while training the model.</p>
+                <!-- <table class="small-table">
                     <thead>
                         <tr>
                             <th>Attributes</th>
@@ -921,6 +922,335 @@
                             <td>Binary</td>
                             <td>N/A</td>
                             <td>Whether the individual recidivated within 2 years (1=yes, 0=no)</td>
+                        </tr>
+                    </tbody>
+                </table> -->
+                <table class="small-table">
+                    <thead>
+                        <tr>
+                            <th>Attributes</th>
+                            <th>Type</th>
+                            <th>Values/Range</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Identification and Demographics -->
+                        <tr>
+                            <td>id</td>
+                            <td>Categorical</td>
+                            <td>Unique IDs</td>
+                            <td>Anonymized individual identifier</td>
+                        </tr>
+                        <tr>
+                            <td>name, first, last</td>
+                            <td>Categorical</td>
+                            <td>Text</td>
+                            <td>Names (to be removed for privacy)</td>
+                        </tr>
+                        <tr>
+                            <td>sex</td>
+                            <td>Categorical</td>
+                            <td>Male/Female</td>
+                            <td>Gender of individual</td>
+                        </tr>
+                        <tr>
+                            <td>dob</td>
+                            <td>Date</td>
+                            <td>YYYY-MM-DD</td>
+                            <td>Date of birth</td>
+                        </tr>
+                        <tr>
+                            <td>age</td>
+                            <td>Numerical</td>
+                            <td>[19 - 75]</td>
+                            <td>Numerical age value</td>
+                        </tr>
+                        <tr>
+                            <td>age_cat</td>
+                            <td>Categorical</td>
+                            <td>e.g."less than 25", "25 - 45"</td>
+                            <td>Discretized age categories</td>
+                        </tr>
+                        <tr>
+                            <td>race</td>
+                            <td>Categorical</td>
+                            <td>African-American, Caucasian, etc.</td>
+                            <td>Race of individual</td>
+                        </tr>
+                
+                        <!-- Juvenile and Prior Records -->
+                        <tr>
+                            <td>juv_fel_count</td>
+                            <td>Numerical</td>
+                            <td>[0 - N]</td>
+                            <td>Number of juvenile felonies</td>
+                        </tr>
+                        <tr>
+                            <td>juv_misd_count</td>
+                            <td>Numerical</td>
+                            <td>[0 - N]</td>
+                            <td>Number of juvenile misdemeanors</td>
+                        </tr>
+                        <tr>
+                            <td>juv_other_count</td>
+                            <td>Numerical</td>
+                            <td>[0 - N]</td>
+                            <td>Number of other juvenile offenses</td>
+                        </tr>
+                        <tr>
+                            <td>priors_count</td>
+                            <td>Numerical</td>
+                            <td>[0 - N]</td>
+                            <td>Number of prior offenses</td>
+                        </tr>
+                        <tr>
+                            <td>priors_count.1</td>
+                            <td>Numerical</td>
+                            <td>[0 - N]</td>
+                            <td>Duplicate of priors_count (verify if needed)</td>
+                        </tr>
+                
+                        <!-- COMPAS Assessment -->
+                        <tr>
+                            <td>compas_screening_date</td>
+                            <td>Date</td>
+                            <td>YYYY-MM-DD</td>
+                            <td>Date of COMPAS risk assessment</td>
+                        </tr>
+                        <tr>
+                            <td>screening_date</td>
+                            <td>Date</td>
+                            <td>YYYY-MM-DD</td>
+                            <td>General risk screening date</td>
+                        </tr>
+                        <tr>
+                            <td>type_of_assessment</td>
+                            <td>Categorical</td>
+                            <td>e.g., "General Recidivism"</td>
+                            <td>Type of risk assessment</td>
+                        </tr>
+                        <tr>
+                            <td>decile_score</td>
+                            <td>Numerical</td>
+                            <td>[1 - 10]</td>
+                            <td>COMPAS general recidivism risk score</td>
+                        </tr>
+                        <tr>
+                            <td>decile_score.1</td>
+                            <td>Numerical</td>
+                            <td>[1 - 10]</td>
+                            <td>Duplicate of decile_score (verify if needed)</td>
+                        </tr>
+                        <tr>
+                            <td>score_text</td>
+                            <td>Categorical</td>
+                            <td>Low/Medium/High</td>
+                            <td>Risk level text description</td>
+                        </tr>
+                
+                        <!-- Violent Assessment -->
+                        <tr>
+                            <td>v_type_of_assessment</td>
+                            <td>Categorical</td>
+                            <td>e.g., "Violent Recidivism"</td>
+                            <td>Type of violent risk assessment</td>
+                        </tr>
+                        <tr>
+                            <td>v_decile_score</td>
+                            <td>Numerical</td>
+                            <td>[1 - 10]</td>
+                            <td>Violent recidivism risk score</td>
+                        </tr>
+                        <tr>
+                            <td>v_score_text</td>
+                            <td>Categorical</td>
+                            <td>Low/Medium/High</td>
+                            <td>Violent risk level description</td>
+                        </tr>
+                        <tr>
+                            <td>v_screening_date</td>
+                            <td>Date</td>
+                            <td>YYYY-MM-DD</td>
+                            <td>Violent risk screening date</td>
+                        </tr>
+                
+                        <!-- Current Case -->
+                        <tr>
+                            <td>c_case_number</td>
+                            <td>Categorical</td>
+                            <td>Text</td>
+                            <td>Current case identifier</td>
+                        </tr>
+                        <tr>
+                            <td>c_offense_date</td>
+                            <td>Date</td>
+                            <td>YYYY-MM-DD</td>
+                            <td>Date of current offense</td>
+                        </tr>
+                        <tr>
+                            <td>c_arrest_date</td>
+                            <td>Date</td>
+                            <td>YYYY-MM-DD</td>
+                            <td>Date of current arrest</td>
+                        </tr>
+                        <tr>
+                            <td>c_days_from_compas</td>
+                            <td>Numerical</td>
+                            <td>[0 - N]</td>
+                            <td>Days between COMPAS screening and current offense</td>
+                        </tr>
+                        <tr>
+                            <td>c_charge_degree</td>
+                            <td>Categorical</td>
+                            <td>Felony/Misdemeanor</td>
+                            <td>Severity of current charge</td>
+                        </tr>
+                        <tr>
+                            <td>c_charge_desc</td>
+                            <td>Categorical</td>
+                            <td>e.g., "Burglary"</td>
+                            <td>Description of current charge</td>
+                        </tr>
+                        <tr>
+                            <td>c_jail_in</td>
+                            <td>Date</td>
+                            <td>YYYY-MM-DD</td>
+                            <td>Current jail entry date</td>
+                        </tr>
+                        <tr>
+                            <td>c_jail_out</td>
+                            <td>Date</td>
+                            <td>YYYY-MM-DD</td>
+                            <td>Current jail release date</td>
+                        </tr>
+                
+                        <!-- Recidivism Information -->
+                        <tr>
+                            <td>is_recid<b>(target)</b></td>
+                            <td>Binary</td>
+                            <td>0/1</td>
+                            <td>The binary indicator of recidivation</td>
+                        </tr>
+                        <tr>
+                            <td>r_case_number</td>
+                            <td>Categorical</td>
+                            <td>Text</td>
+                            <td>Recidivism case identifier</td>
+                        </tr>
+                        <tr>
+                            <td>r_charge_degree</td>
+                            <td>Categorical</td>
+                            <td>Felony/Misdemeanor</td>
+                            <td>Severity of recidivism charge</td>
+                        </tr>
+                        <tr>
+                            <td>r_charge_desc</td>
+                            <td>Categorical</td>
+                            <td>Text</td>
+                            <td>Description of recidivism charge</td>
+                        </tr>
+                        <tr>
+                            <td>r_days_from_arrest</td>
+                            <td>Numerical</td>
+                            <td>[0 - N]</td>
+                            <td>Days between arrest and recidivism</td>
+                        </tr>
+                        <tr>
+                            <td>r_offense_date</td>
+                            <td>Date</td>
+                            <td>YYYY-MM-DD</td>
+                            <td>Date of recidivism offense</td>
+                        </tr>
+                        <tr>
+                            <td>r_jail_in</td>
+                            <td>Date</td>
+                            <td>YYYY-MM-DD</td>
+                            <td>Recidivism jail entry date</td>
+                        </tr>
+                        <tr>
+                            <td>r_jail_out</td>
+                            <td>Date</td>
+                            <td>YYYY-MM-DD</td>
+                            <td>Recidivism jail release date</td>
+                        </tr>
+                
+                        <!-- Violent Recidivism -->
+                        <tr>
+                            <td>violent_recid</td>
+                            <td></td>
+                            <td>Null</td>
+                            <td>Values are all NA. This column is ignored</td>
+                        </tr>
+                        <tr>
+                            <td>is_violent_recid<b>(target)</b></td>
+                            <td>Binary</td>
+                            <td>0/1</td>
+                            <td>The binary indicator of violent follow-up crime</td>
+                        </tr>
+                        <tr>
+                            <td>vr_case_number</td>
+                            <td>Categorical</td>
+                            <td>Text</td>
+                            <td>Violent recidivism case identifier</td>
+                        </tr>
+                        <tr>
+                            <td>vr_charge_degree</td>
+                            <td>Categorical</td>
+                            <td>Felony/Misdemeanor</td>
+                            <td>Severity of violent recidivism charge</td>
+                        </tr>
+                        <tr>
+                            <td>vr_offense_date</td>
+                            <td>Date</td>
+                            <td>YYYY-MM-DD</td>
+                            <td>Date of violent recidivism offense</td>
+                        </tr>
+                        <tr>
+                            <td>vr_charge_desc</td>
+                            <td>Categorical</td>
+                            <td>Text</td>
+                            <td>Description of violent recidivism charge</td>
+                        </tr>
+                
+                        <!-- Custody and Timeline -->
+                        <tr>
+                            <td>in_custody</td>
+                            <td>Binary</td>
+                            <td>0/1</td>
+                            <td>Currently in custody indicator</td>
+                        </tr>
+                        <tr>
+                            <td>out_custody</td>
+                            <td>Binary</td>
+                            <td>0/1</td>
+                            <td>Out of custody indicator</td>
+                        </tr>
+                        <tr>
+                            <td>start</td>
+                            <td>Date</td>
+                            <td>YYYY-MM-DD</td>
+                            <td>Start date of observation period</td>
+                        </tr>
+                        <tr>
+                            <td>end</td>
+                            <td>Date</td>
+                            <td>YYYY-MM-DD</td>
+                            <td>End date of observation period</td>
+                        </tr>
+                        <tr>
+                            <td>event</td>
+                            <td>Categorical</td>
+                            <td>Text</td>
+                            <td>Event type indicator</td>
+                        </tr>
+                
+                        <!-- Target Variable -->
+                        <tr>
+                            <td>two_year_recid<b>(target)</b></td>
+                            <td>Binary</td>
+                            <td>0/1</td>
+                            <td>Two-year recidivism indicator (target variable)</td>
                         </tr>
                     </tbody>
                 </table>
