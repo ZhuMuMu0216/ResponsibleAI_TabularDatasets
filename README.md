@@ -71,6 +71,14 @@ Because I am currently doing research in the field of fairness, and I am very an
     - [compas-scores-two-years-violent.csv](https://github.com/propublica/compas-analysis/blob/master/compas-scores-two-years-violent.csv) (4743 instances, subset of compas-scores.csv), 
     - [compas-scores-raw.csv](https://github.com/propublica/compas-analysis/blob/master/compas-scores-raw.csv) (it needs more preprocessing), 
     - [compas-scores.csv](https://github.com/propublica/compas-analysis/blob/master/compas-scores.csv) (11757 instances)
+
+### Dataset7: Diabetes 130-US Hospitals
+1. **Description:** The dataset represents ten years (1999-2008) of clinical care at 130 US hospitals and integrated delivery networks. Each row concerns hospital records of patients diagnosed with diabetes, who underwent laboratory, medications, and stayed up to 14 days. The goal is to determine the early readmission of the patient within 30 days of discharge.
+2. **URL:** https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999-2008
+3. **Sensitive features:** Age, Sex, Gender
+4. **Features:** see more details after entering the url.
+5. **Comment from website:** Not a bad dataset, but definitely not for beginners or intermediates. This is a very imbalanced dataset, and even if you manage to soften this issue with under/oversampling techniques, the chance of distinguishing between the majority and minority class is very small. Confusion matrices look like a mess, don't count on the usual accuracy metric. Even feature engineering, or even PCA techniques, can't find any reliable new source of info, not enough to have enough true positives without making too many false positive at the same time. But this is just part of the nature of the problem we are trying to solve itself. 
+
 ### Reference:
 1. [Le Quy, Tai, et al. "A survey on datasets for fairness‐aware machine learning." Wiley Interdisciplinary Reviews: Data Mining and Knowledge Discovery 12.3 (2022): e1452](https://wires.onlinelibrary.wiley.com/doi/full/10.1002/widm.1452).
 2. [Markelle Kelly, Rachel Longjohn, Kolby Nottingham,

@@ -30,6 +30,7 @@
             <li><a href="#dataset4" class="nav-link">Dataset4: Bank Marketing</a></li>
             <li><a href="#dataset5" class="nav-link">Dataset5: Default of Credit Card Clients</a></li>
             <li><a href="#dataset6" class="nav-link">Dataset6: COMPAS</a></li>
+            <li><a href="#dataset7" class="nav-link">Dataset7: Diabetes 130-US Hospitals</a></li>
         </ul>
     </nav>
 
@@ -1259,7 +1260,352 @@
             </div>
         </section>
 
+        <!-- Dataset7 -->
+        <section id="dataset7" class="features">
+            <h2>Dataset7: Diabetes 130-US Hospitals</h2>
+            <div class="feature-grid">
+                <p><strong>Description:</strong> The dataset represents ten years (1999-2008) of clinical care at 130 US hospitals and integrated delivery networks. Each row concerns hospital records of patients diagnosed with diabetes, who underwent laboratory, medications, and stayed up to 14 days. The goal is to determine the early readmission of the patient within 30 days of discharge. 
+                    Multi-class classification task with 3 classes.</p>
+                <p><strong>URL:</strong> <a href="https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999-2008" target="_blank">https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999-2008</a></p>
+                <p><strong>Sensitive features:</strong> Age, Sex, Race</p>
+                <p><strong>Features:</strong>   
+                <table class="small-table">
+                    <thead>
+                        <tr>
+                            <th>Attributes</th>
+                            <th>Type</th>
+                            <th>Values/Range</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Identification -->
+                        <tr>
+                            <td>encounter_id</td>
+                            <td>Categorical</td>
+                            <td>Unique IDs</td>
+                            <td>Unique identifier of an encounter</td>
+                        </tr>
+                        <tr>
+                            <td>patient_nbr</td>
+                            <td>Categorical</td>
+                            <td>Unique IDs</td>
+                            <td>Unique identifier of a patient</td>
+                        </tr>
+                
+                        <!-- Demographics -->
+                        <tr>
+                            <td>race</td>
+                            <td>Categorical</td>
+                            <td>Caucasian, Asian, African American, Hispanic, other</td>
+                            <td>Patient's race <b>(has missing values)</b></td>
+                        </tr>
+                        <tr>
+                            <td>gender</td>
+                            <td>Categorical</td>
+                            <td>male, female, unknown/invalid</td>
+                            <td>Patient's gender</td>
+                        </tr>
+                        <tr>
+                            <td>age</td>
+                            <td>Categorical</td>
+                            <td>[0-10), [10-20), ..., [90-100)</td>
+                            <td>Age grouped in 10-year intervals</td>
+                        </tr>
+                        <tr>
+                            <td>weight</td>
+                            <td>Categorical</td>
+                            <td>Weight in pounds</td>
+                            <td>Patient's weight <b>(has missing values)</b></td>
+                        </tr>
+                
+                        <!-- Admission Information -->
+                        <tr>
+                            <td>admission_type_id</td>
+                            <td>Categorical</td>
+                            <td>9 distinct values</td>
+                            <td>Type of admission (e.g., emergency, urgent, elective, newborn)</td>
+                        </tr>
+                        <tr>
+                            <td>discharge_disposition_id</td>
+                            <td>Categorical</td>
+                            <td>29 distinct values</td>
+                            <td>Discharge disposition (e.g., discharged to home, expired)</td>
+                        </tr>
+                        <tr>
+                            <td>admission_source_id</td>
+                            <td>Categorical</td>
+                            <td>21 distinct values</td>
+                            <td>Admission source (e.g., physician referral, emergency room)</td>
+                        </tr>
+                
+                        <!-- Hospital Stay Information -->
+                        <tr>
+                            <td>time_in_hospital</td>
+                            <td>Integer</td>
+                            <td>[0-N]</td>
+                            <td>Days between admission and discharge</td>
+                        </tr>
+                        <tr>
+                            <td>payer_code</td>
+                            <td>Categorical</td>
+                            <td>23 distinct values</td>
+                            <td>Insurance provider (e.g., Blue Cross, Medicare)<b>(has missing values)</b></td>
+                        </tr>
+                        <tr>
+                            <td>medical_specialty</td>
+                            <td>Categorical</td>
+                            <td>84 distinct values</td>
+                            <td>Admitting physician specialty <b>(has missing values)</b></td>
+                        </tr>
+                
+                        <!-- Medical Procedures -->
+                        <tr>
+                            <td>num_lab_procedures</td>
+                            <td>Integer</td>
+                            <td>[0-N]</td>
+                            <td>Number of lab tests performed</td>
+                        </tr>
+                        <tr>
+                            <td>num_procedures</td>
+                            <td>Integer</td>
+                            <td>[0-N]</td>
+                            <td>Number of procedures performed</td>
+                        </tr>
+                        <tr>
+                            <td>num_medications</td>
+                            <td>Integer</td>
+                            <td>[0-N]</td>
+                            <td>Number of distinct medications administered</td>
+                        </tr>
+                
+                        <!-- Patient History -->
+                        <tr>
+                            <td>number_outpatient</td>
+                            <td>Integer</td>
+                            <td>[0-N]</td>
+                            <td>Number of outpatient visits in the past year</td>
+                        </tr>
+                        <tr>
+                            <td>number_emergency</td>
+                            <td>Integer</td>
+                            <td>[0-N]</td>
+                            <td>Number of emergency visits in the past year</td>
+                        </tr>
+                        <tr>
+                            <td>number_inpatient</td>
+                            <td>Integer</td>
+                            <td>[0-N]</td>
+                            <td>Number of inpatient visits in the past year</td>
+                        </tr>
+                
+                        <!-- Diagnosis Information -->
+                        <tr>
+                            <td>diag_1</td>
+                            <td>Categorical</td>
+                            <td>848 distinct values</td>
+                            <td>Primary diagnosis (ICD9 codes) <b>(has missing values)</b></td>
+                        </tr>
+                        <tr>
+                            <td>diag_2</td>
+                            <td>Categorical</td>
+                            <td>923 distinct values</td>
+                            <td>Secondary diagnosis (ICD9 codes) <b>(has missing values)</b></td>
+                        </tr>
+                        <tr>
+                            <td>diag_3</td>
+                            <td>Categorical</td>
+                            <td>954 distinct values</td>
+                            <td>Additional secondary diagnosis (ICD9 codes) <b>(has missing values)</b></td>
+                        </tr>
+                        <tr>
+                            <td>number_diagnoses</td>
+                            <td>Integer</td>
+                            <td>[0-N]</td>
+                            <td>Number of diagnoses entered</td>
+                        </tr>
+                
+                        <!-- Lab Tests -->
+                        <tr>
+                            <td>max_glu_serum</td>
+                            <td>Categorical</td>
+                            <td>>200, >300, normal, none</td>
+                            <td>Maximum glucose serum test result</td>
+                        </tr>
+                        <tr>
+                            <td>A1Cresult</td>
+                            <td>Categorical</td>
+                            <td>>8, >7, normal, none</td>
+                            <td>A1C test result</td>
+                        </tr>
+                
+                        <!-- Medications -->
+                        <tr>
+                            <td>metformin</td>
+                            <td>Categorical</td>
+                            <td>up, down, steady, no</td>
+                            <td>Metformin dosage change indicator</td>
+                        </tr>
+                        <tr>
+                            <td>repaglinide</td>
+                            <td>Categorical</td>
+                            <td>up, down, steady, no</td>
+                            <td>Repaglinide dosage change indicator</td>
+                        </tr>
+                        <tr>
+                            <td>nateglinide</td>
+                            <td>Categorical</td>
+                            <td>up, down, steady, no</td>
+                            <td>Nateglinide dosage change indicator</td>
+                        </tr>
+                        <tr>
+                            <td>chlorpropamide</td>
+                            <td>Categorical</td>
+                            <td>up, down, steady, no</td>
+                            <td>Chlorpropamide dosage change indicator</td>
+                        </tr>
+                        <tr>
+                            <td>glimepiride</td>
+                            <td>Categorical</td>
+                            <td>up, down, steady, no</td>
+                            <td>Glimepiride dosage change indicator</td>
+                        </tr>
+                        <tr>
+                            <td>acetohexamide</td>
+                            <td>Categorical</td>
+                            <td>up, down, steady, no</td>
+                            <td>Acetohexamide dosage change indicator</td>
+                        </tr>
+                        <tr>
+                            <td>glipizide</td>
+                            <td>Categorical</td>
+                            <td>up, down, steady, no</td>
+                            <td>Glipizide dosage change indicator</td>
+                        </tr>
+                        <tr>
+                            <td>glyburide</td>
+                            <td>Categorical</td>
+                            <td>up, down, steady, no</td>
+                            <td>Glyburide dosage change indicator</td>
+                        </tr>
+                        <tr>
+                            <td>tolbutamide</td>
+                            <td>Categorical</td>
+                            <td>up, down, steady, no</td>
+                            <td>Tolbutamide dosage change indicator</td>
+                        </tr>
+                        <tr>
+                            <td>pioglitazone</td>
+                            <td>Categorical</td>
+                            <td>up, down, steady, no</td>
+                            <td>Pioglitazone dosage change indicator</td>
+                        </tr>
+                        <tr>
+                            <td>rosiglitazone</td>
+                            <td>Categorical</td>
+                            <td>up, down, steady, no</td>
+                            <td>Rosiglitazone dosage change indicator</td>
+                        </tr>
+                        <tr>
+                            <td>acarbose</td>
+                            <td>Categorical</td>
+                            <td>up, down, steady, no</td>
+                            <td>Acarbose dosage change indicator</td>
+                        </tr>
+                        <tr>
+                            <td>miglitol</td>
+                            <td>Categorical</td>
+                            <td>up, down, steady, no</td>
+                            <td>Miglitol dosage change indicator</td>
+                        </tr>
+                        <tr>
+                            <td>troglitazone</td>
+                            <td>Categorical</td>
+                            <td>up, down, steady, no</td>
+                            <td>Troglitazone dosage change indicator</td>
+                        </tr>
+                        <tr>
+                            <td>tolazamide</td>
+                            <td>Categorical</td>
+                            <td>up, down, steady, no</td>
+                            <td>Tolazamide dosage change indicator</td>
+                        </tr>
+                        <tr>
+                            <td>examide</td>
+                            <td>Categorical</td>
+                            <td>up, down, steady, no</td>
+                            <td>Examide dosage change indicator</td>
+                        </tr>
+                        <tr>
+                            <td>citoglipton</td>
+                            <td>Categorical</td>
+                            <td>up, down, steady, no</td>
+                            <td>Citoglipton dosage change indicator</td>
+                        </tr>
+                        <tr>
+                            <td>insulin</td>
+                            <td>Categorical</td>
+                            <td>up, down, steady, no</td>
+                            <td>Insulin dosage change indicator</td>
+                        </tr>
+                        <tr>
+                            <td>glyburide-metformin</td>
+                            <td>Categorical</td>
+                            <td>up, down, steady, no</td>
+                            <td>Glyburide-metformin combination dosage change indicator</td>
+                        </tr>
+                        <tr>
+                            <td>glipizide-metformin</td>
+                            <td>Categorical</td>
+                            <td>up, down, steady, no</td>
+                            <td>Glipizide-metformin combination dosage change indicator</td>
+                        </tr>
+                        <tr>
+                            <td>glimepiride-pioglitazone</td>
+                            <td>Categorical</td>
+                            <td>up, down, steady, no</td>
+                            <td>Glimepiride-pioglitazone combination dosage change indicator</td>
+                        </tr>
+                        <tr>
+                            <td>metformin-rosiglitazone</td>
+                            <td>Categorical</td>
+                            <td>up, down, steady, no</td>
+                            <td>Metformin-rosiglitazone combination dosage change indicator</td>
+                        </tr>
+                        <tr>
+                            <td>metformin-pioglitazone</td>
+                            <td>Categorical</td>
+                            <td>up, down, steady, no</td>
+                            <td>Metformin-pioglitazone combination dosage change indicator</td>
+                        </tr>
+                
+                        <!-- Treatment Changes -->
+                        <tr>
+                            <td>change</td>
+                            <td>Categorical</td>
+                            <td>change, no change</td>
+                            <td>Indicates if there was a change in diabetic medications</td>
+                        </tr>
+                        <tr>
+                            <td>diabetesMed</td>
+                            <td>Categorical</td>
+                            <td>yes, no</td>
+                            <td>Indicates if any diabetic medication was prescribed</td>
+                        </tr>
+                
+                        <!-- Target Variable -->
+                        <tr>
+                            <td>readmitted(target)</td>
+                            <td>Categorical</td>
+                            <td>&lt;30, &gt;30, No</td>
+                            <td>Days to inpatient readmission (&lt;30: less than 30 days, &gt;30: more than 30 days, No: no readmission) (no missing values)</td>
+                        </tr>
+                    </tbody>
+                </table>
 
+            </div>
+        </section>
+        
         <!-- 安装指南 -->
         <!-- <section id="installation" class="installation">
             <h2>安装指南</h2>
