@@ -30,7 +30,8 @@
             <li><a href="#dataset4" class="nav-link">Dataset4: Bank Marketing</a></li>
             <li><a href="#dataset5" class="nav-link">Dataset5: Default of Credit Card Clients</a></li>
             <li><a href="#dataset6" class="nav-link">Dataset6: COMPAS</a></li>
-            <li><a href="#dataset7" class="nav-link">Dataset7: Diabetes 130-US Hospitals</a></li>
+            <li><a href="#dataset7" class="nav-link">Dataset7: Hotel Booking Demand</a></li>
+            <li><a href="#dataset8" class="nav-link">Dataset8: Diabetes 130-US Hospitals</a></li>
         </ul>
     </nav>
 
@@ -63,8 +64,7 @@
                 <p><strong>Description:</strong> The dataset contains 1000 instances and 20 features, without any missing values.</p>
                 <p><strong>URL:</strong> <a href="https://archive.ics.uci.edu/dataset/144/statlog+german+credit+data" target="_blank">https://archive.ics.uci.edu/dataset/144/statlog+german+credit+data</a></p>
                 <p><strong>Sensitive features:</strong> Age, Sex</p>
-                <p><strong>Features:</strong></p>
-        
+                <p><strong>Features:</strong> 20 features + 1 target (Risk)</p>
                 <table class="small-table">
                     <thead>
                         <tr>
@@ -288,7 +288,7 @@
                 <p><strong>Description:</strong> Prediction task is to determine whether a person's income is over $50,000 a year based on census data. Also known as "Census Income" dataset. It has 48842 instances and 14 features.</p>
                 <p><strong>URL:</strong> <a href="https://archive.ics.uci.edu/dataset/2/adult" target="_blank">https://archive.ics.uci.edu/dataset/2/adult</a></p>
                 <p><strong>Sensitive features:</strong> Age, Sex, Race</p>
-                <p><strong>Features:</strong></p>
+                <p><strong>Features:</strong> 14 features + 1 target (income)</p>
 
                 <table class="small-table">
                     <thead>
@@ -420,7 +420,7 @@
                 <p><strong>Description:</strong> Prediction task is to determine whether a person's income is over $50,000 a year based on census data. This data set contains weighted census data extracted from the 1994 and 1995 Current Population Surveys conducted by the U.S. Census Bureau. It is <strong>an extended version of the Adult Dataset with a larger scale</strong>, used to study classification model performance and feature engineering methods. It has 299285 instances and 41 features.</p>
                 <p><strong>URL:</strong> <a href="https://archive.ics.uci.edu/dataset/117/census+income+kdd" target="_blank">https://archive.ics.uci.edu/dataset/117/census+income+kdd</a></p>
                 <p><strong>Sensitive features:</strong> Age, Sex, Race</p>
-                <p><strong>Features:</strong> See more details after entering the URL.</p>
+                <p><strong>Features:</strong> 41 features + 1 target (income)</p>
             </div>
         </section>
 
@@ -431,7 +431,7 @@
                 <p><strong>Description:</strong> The data is related with direct marketing campaigns of a Portuguese banking institution. The marketing campaigns were based on phone calls. Often, more than one contact to the same client was required, in order to access if the product (bank term deposit) would be ('yes') or not ('no') subscribed. It has 45211 instances and 16 features.</p>
                 <p><strong>URL:</strong> <a href="https://archive.ics.uci.edu/dataset/222/bank+marketing" target="_blank">https://archive.ics.uci.edu/dataset/222/bank+marketing</a></p>
                 <p><strong>Sensitive features:</strong> Age, (marital)</p>
-                <p><strong>Features:</strong></p>
+                <p><strong>Features:</strong> 16 features + 1 target (y)</p>
 
                 <table class="small-table">
                     <thead>
@@ -575,7 +575,7 @@
                 <p><strong>Description:</strong> This research aimed at the case of customers' default payments in Taiwan and compares the predictive accuracy of probability of default among six data mining methods. It has 30000 instances and 23 features, without missing values.</p>
                 <p><strong>URL:</strong> <a href="https://archive.ics.uci.edu/dataset/350/default+of+credit+card+clients" target="_blank">https://archive.ics.uci.edu/dataset/350/default+of+credit+card+clients</a></p>
                 <p><strong>Sensitive features:</strong> Age, Sex, (Marital, Education)</p>
-                <p><strong>Features:</strong></p>
+                <p><strong>Features:</strong> 23 features + 1 target (Y)</p>
 
                 <table class="small-table">
                     <thead>
@@ -1262,13 +1262,234 @@
 
         <!-- Dataset7 -->
         <section id="dataset7" class="features">
-            <h2>Dataset7: Diabetes 130-US Hospitals</h2>
+            <h2>Dataset7: Hotel Booking Demand</h2>
+            <div class="feature-grid">
+                <p><strong>Description:</strong> This data set contains booking information for a city hotel and a resort hotel, and includes information such as when the booking was made, length of stay, the number of adults, children, and/or babies, and the number of available parking spaces, among other things. It has 119390 instances.</p>
+                <p><strong>URL:</strong> <a href="https://www.kaggle.com/datasets/jessemostipak/hotel-booking-demand" target="_blank">https://www.kaggle.com/datasets/jessemostipak/hotel-booking-demand</a></p>
+                <p><strong>Sensitive features:</strong> None, and I don't think it's suitable for fairness research.</p>
+                <p><strong>More details(quoted from kaggle):</strong>The data is originally from the article <a href="https://www.sciencedirect.com/science/article/pii/S2352340918315191" target="_blank"> Hotel Booking Demand Datasets</a>, written by Nuno Antonio, Ana Almeida, and Luis Nunes for Data in Brief, Volume 22, February 2019.
+                    The data was downloaded and cleaned by Thomas Mock and Antoine Bichat for <a href="https://github.com/rfordatascience/tidytuesday/blob/main/data/2020/2020-02-11/readme.md" target="_blank"> #TidyTuesday during the week of February 11th, 2020.</a></p>
+                <p><strong>Features:</strong> 31 features + 1 target (is_canceled)</p>  
+                <table class="small-table">
+                    <thead>
+                        <tr>
+                            <th>Attributes</th>
+                            <th>Type</th>
+                            <th>Values/Range</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>hotel</td>
+                            <td>Categorical</td>
+                            <td>Resort Hotel, City Hotel</td>
+                            <td>Type of hotel</td>
+                        </tr>
+                        <tr>
+                            <td>is_canceled (target)</td>
+                            <td>Categorical</td>
+                            <td>(1) is canceled, (0) is not canceled</td>
+                            <td>Indicates if the booking was canceled</td>
+                        </tr>
+                        <tr>
+                            <td>lead_time</td>
+                            <td>Integer</td>
+                            <td>[0-N]</td>
+                            <td>Number of days between booking and arrival</td>
+                        </tr>
+                        <tr>
+                            <td>arrival_date_year</td>
+                            <td>Integer</td>
+                            <td>[YYYY]</td>
+                            <td>Year of arrival date</td>
+                        </tr>
+                        <tr>
+                            <td>arrival_date_month</td>
+                            <td>Categorical</td>
+                            <td>January to December</td>
+                            <td>Month of arrival</td>
+                        </tr>
+                        <tr>
+                            <td>arrival_date_week_number</td>
+                            <td>Integer</td>
+                            <td>[1-52]</td>
+                            <td>Week number of the arrival date</td>
+                        </tr>
+                        <tr>
+                            <td>arrival_date_day_of_month</td>
+                            <td>Integer</td>
+                            <td>[1-31]</td>
+                            <td>Day of the month of arrival</td>
+                        </tr>
+                        <tr>
+                            <td>stays_in_weekend_nights</td>
+                            <td>Integer</td>
+                            <td>[0-N]</td>
+                            <td>Number of weekend nights (Saturday or Sunday)</td>
+                        </tr>
+                        <tr>
+                            <td>stays_in_week_nights</td>
+                            <td>Integer</td>
+                            <td>[0-N]</td>
+                            <td>Number of weeknights (Monday to Friday)</td>
+                        </tr>
+                        <tr>
+                            <td>adults</td>
+                            <td>Integer</td>
+                            <td>[0-N]</td>
+                            <td>Number of adults</td>
+                        </tr>
+                        <tr>
+                            <td>children</td>
+                            <td>Integer</td>
+                            <td>[0-N]</td>
+                            <td>Number of children</td>
+                        </tr>
+                        <tr>
+                            <td>babies</td>
+                            <td>Integer</td>
+                            <td>[0-N]</td>
+                            <td>Number of babies</td>
+                        </tr>
+                        <tr>
+                            <td>meal</td>
+                            <td>Categorical</td>
+                            <td>Undefined/SC, BB, HB, FB</td>
+                            <td>Type of meal booked (e.g., Bed & Breakfast, Full Board)</td>
+                        </tr>
+                        <tr>
+                            <td>country</td>
+                            <td>Categorical</td>
+                            <td>ISO 3155–3:2013 format</td>
+                            <td>Country of origin</td>
+                        </tr>
+                        <tr>
+                            <td>market_segment</td>
+                            <td>Categorical</td>
+                            <td>TA = Travel Agents, TO = Tour Operators</td>
+                            <td>Market segment designation</td>
+                        </tr>
+                        <tr>
+                            <td>distribution_channel</td>
+                            <td>Categorical</td>
+                            <td>TA = Travel Agents, TO = Tour Operators</td>
+                            <td>Booking distribution channel</td>
+                        </tr>
+                        <tr>
+                            <td>is_repeated_guest</td>
+                            <td>Categorical</td>
+                            <td>(1) is repeated, (0) is not repeated</td>
+                            <td>Indicates if the booking name was from a repeated guest</td>
+                        </tr>
+                        <tr>
+                            <td>previous_cancellations</td>
+                            <td>Integer</td>
+                            <td>[0-N]</td>
+                            <td>Number of previous canceled bookings</td>
+                        </tr>
+                        <tr>
+                            <td>previous_bookings_not_canceled</td>
+                            <td>Integer</td>
+                            <td>[0-N]</td>
+                            <td>Number of previous non-canceled bookings</td>
+                        </tr>
+                        <tr>
+                            <td>reserved_room_type</td>
+                            <td>Categorical</td>
+                            <td>Anonymous code</td>
+                            <td>Code for room type reserved</td>
+                        </tr>
+                        <tr>
+                            <td>assigned_room_type</td>
+                            <td>Categorical</td>
+                            <td>Anonymous code</td>
+                            <td>Code for room type assigned</td>
+                        </tr>
+                        <tr>
+                            <td>booking_changes</td>
+                            <td>Integer</td>
+                            <td>[0-N]</td>
+                            <td>Number of booking modifications</td>
+                        </tr>
+                        <tr>
+                            <td>deposit_type</td>
+                            <td>Categorical</td>
+                            <td>No Deposit, Non Refund, Refundable</td>
+                            <td>Indicates if the customer made a deposit</td>
+                        </tr>
+                        <tr>
+                            <td>agent</td>
+                            <td>Categorical</td>
+                            <td>Anonymous ID</td>
+                            <td>ID of the travel agency that made the booking</td>
+                        </tr>
+                        <tr>
+                            <td>company</td>
+                            <td>Categorical</td>
+                            <td>Anonymous ID</td>
+                            <td>ID of the company/entity responsible for the booking</td>
+                        </tr>
+                        <tr>
+                            <td>days_in_waiting_list</td>
+                            <td>Integer</td>
+                            <td>[0-N]</td>
+                            <td>Number of days the booking was in the waiting list</td>
+                        </tr>
+                        <tr>
+                            <td>customer_type</td>
+                            <td>Categorical</td>
+                            <td>Contract, Group, Transient, Transient-party</td>
+                            <td>Type of booking</td>
+                        </tr>
+                        <tr>
+                            <td>adr</td>
+                            <td>Numeric</td>
+                            <td>[0-N]</td>
+                            <td>Average Daily Rate</td>
+                        </tr>
+                        <tr>
+                            <td>required_car_parking_spaces</td>
+                            <td>Integer</td>
+                            <td>[0-N]</td>
+                            <td>Number of car parking spaces required</td>
+                        </tr>
+                        <tr>
+                            <td>total_of_special_requests</td>
+                            <td>Integer</td>
+                            <td>[0-N]</td>
+                            <td>Number of special requests made by the customer</td>
+                        </tr>
+                        <tr>
+                            <td>reservation_status</td>
+                            <td>Categorical</td>
+                            <td>Canceled, Check-Out, No-Show</td>
+                            <td>Final reservation status</td>
+                        </tr>
+                        <tr>
+                            <td>reservation_status_date</td>
+                            <td>Date</td>
+                            <td>[YYYY-MM-DD]</td>
+                            <td>Date of last status update</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                
+                
+
+            </div>
+        </section>
+
+        <!-- Dataset8 -->
+        <section id="dataset8" class="features">
+            <h2>Dataset8: Diabetes 130-US Hospitals</h2>
             <div class="feature-grid">
                 <p><strong>Description:</strong> The dataset represents ten years (1999-2008) of clinical care at 130 US hospitals and integrated delivery networks. Each row concerns hospital records of patients diagnosed with diabetes, who underwent laboratory, medications, and stayed up to 14 days. The goal is to determine the early readmission of the patient within 30 days of discharge. 
                     Multi-class classification task with 3 classes.</p>
                 <p><strong>URL:</strong> <a href="https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999-2008" target="_blank">https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999-2008</a></p>
                 <p><strong>Sensitive features:</strong> Age, Sex, Race</p>
-                <p><strong>Comment from website:</strong>Not a bad dataset, but definitely not for beginners or intermediates. This is a very imbalanced dataset, and even if you manage to soften this issue with under/oversampling techniques, the chance of distinguishing between the majority and minority class is very small. Confusion matrices look like a mess, don't count on the usual accuracy metric. Even feature engineering, or even PCA techniques, can't find any reliable new source of info, not enough to have enough true positives without making too many false positive at the same time. But this is just part of the nature of the problem we are trying to solve itself.</p>
+                <p><strong>Comment from website:</strong> Not a bad dataset, but definitely not for beginners or intermediates. This is a very imbalanced dataset, and even if you manage to soften this issue with under/oversampling techniques, the chance of distinguishing between the majority and minority class is very small. Confusion matrices look like a mess, don't count on the usual accuracy metric. Even feature engineering, or even PCA techniques, can't find any reliable new source of info, not enough to have enough true positives without making too many false positive at the same time. But this is just part of the nature of the problem we are trying to solve itself.</p>
                 <p><strong>Features:</strong>   
                 <table class="small-table">
                     <thead>
